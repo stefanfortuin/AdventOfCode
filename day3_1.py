@@ -1,5 +1,3 @@
-# regex: #(\d+) @ (\d+),(\d+): (\d+)x(\d+)
-
 import re
 
 regex = '#(\d+) @ (\d+),(\d+): (\d+)x(\d+)'
@@ -23,8 +21,7 @@ with open("./Input/day3.txt") as f:
                     claims[posX + x][posY + y] = 'X'
                     totalX += 1
                 elif claims[posX + x][posY + y] != 'X':
-                    claims[posX + x][posY + y] = number
-        
+                    claims[posX + x][posY + y] = number      
 print(totalX)
 
 
