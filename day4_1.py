@@ -57,4 +57,21 @@ guardMaxTimeAsleep = max(guardsTotalSleepTime.items(), key=operator.itemgetter(1
 mostOnMinute = max(onMinutesAsleep[guardMaxTimeAsleep].items(), key=operator.itemgetter(1))[0]
 print(mostOnMinute)
 print(guardMaxTimeAsleep)
-print('answer: ' +  str(int(guardMaxTimeAsleep) * int(mostOnMinute)))
+print('answer1: ' +  str(int(guardMaxTimeAsleep) * int(mostOnMinute)))
+
+#part 2 of day 4
+# guardsMax = {}
+# for guard in onMinutesAsleep:
+#     maxValues = [k for k, v in onMinutesAsleep[guard].items() if v == max(onMinutesAsleep[guard].values())]
+#     guardMax = max(maxValues)
+#     print(maxValues, guardMax, guard)
+#     if guard not in guardsMax:
+#         guardsMax[guard] = guardMax
+
+
+print(guardsMax)
+
+maxOnMinuteOfAllGuards = max(guardsMax.items(), key=operator.itemgetter(1))[0]
+print("guard: " + str(maxOnMinuteOfAllGuards))
+print("minute: " + str(guardsMax[maxOnMinuteOfAllGuards]))
+print("answer2: " + str(int(maxOnMinuteOfAllGuards) * int(guardsMax[maxOnMinuteOfAllGuards])))
